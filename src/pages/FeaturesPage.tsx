@@ -1,4 +1,3 @@
-import React from "react";
 import { AiFillStar, AiOutlineClockCircle } from "react-icons/ai";
 import { BiPause, BiPlay, BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { BsFullscreen, BsVolumeMute } from "react-icons/bs";

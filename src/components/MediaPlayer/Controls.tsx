@@ -1,4 +1,3 @@
-import React from "react";
 import { CiMinimize1, CiPause1, CiPlay1 } from "react-icons/ci";
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
 import { FaBackwardStep, FaForwardStep } from "react-icons/fa6";

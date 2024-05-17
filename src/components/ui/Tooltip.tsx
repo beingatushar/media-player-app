@@ -1,5 +1,5 @@
 // components/Tooltip.tsx
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 
 interface TooltipProps {
     children: ReactNode;

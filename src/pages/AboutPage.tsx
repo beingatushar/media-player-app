@@ -1,4 +1,3 @@
-import React from "react";
 import profilePic from "../assets/profile-pic.jpg";
 
 const AboutPage: React.FC = () => {

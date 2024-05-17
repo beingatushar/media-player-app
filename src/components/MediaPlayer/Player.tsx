@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CiMaximize1, CiPause1, CiPlay1 } from "react-icons/ci";
 import { IoCloseSharp } from "react-icons/io5";
 import { usePlayerStore } from "../../store/playerStore";

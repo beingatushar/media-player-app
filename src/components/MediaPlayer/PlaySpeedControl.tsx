@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { usePlayerStore } from "../../store/playerStore";
 import Tooltip from "../ui/Tooltip";
 
