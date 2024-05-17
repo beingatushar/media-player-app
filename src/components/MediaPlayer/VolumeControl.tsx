@@ -1,6 +1,6 @@
-import { usePlayerStore } from "../store/playerStore";
+import { usePlayerStore } from "../../store/playerStore";
 import { HiMiniSpeakerWave, HiMiniSpeakerXMark } from "react-icons/hi2";
-import Tooltip from "./Tooltip";
+import Tooltip from "../ui/Tooltip";
 
 const VolumeControl = () => {
     const { toggleMute, volume, setVolume } = usePlayerStore();
@@ -22,6 +22,7 @@ const VolumeControl = () => {
                     min="0"
                     max="1"
                     step="0.01"
+                    className="w-[50px]"
                     value={volume}
                     onChange={(e) => setVolume(parseFloat(e.target.value))}
                 />

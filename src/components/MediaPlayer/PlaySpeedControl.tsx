@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { usePlayerStore } from "../store/playerStore";
-import Tooltip from "./Tooltip";
+import { usePlayerStore } from "../../store/playerStore";
+import Tooltip from "../ui/Tooltip";
 
 const PlaySpeedControl: React.FC = () => {
     const { playbackSpeed, setPlaybackSpeed } = usePlayerStore();

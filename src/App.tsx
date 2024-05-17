@@ -1,33 +1,21 @@
-import Header from "./components/Header";
-import Features from "./components/Features";
+import Header from "./components/ui/Header";
 import { Route, Routes } from "react-router-dom";
-import AboutPage from "./components/AboutPage";
-import ContactPage from "./components/ContactPage";
-import Player from "./components/Player";
-import { DiVim } from "react-icons/di";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
+import FeaturesPage from "./pages/FeaturesPage";
 
 function App() {
     return (
-        <div className="grid grid-cols-3 min-h-screen bg-gray-900 ">
+        <div className="min-h-screen bg-gray-800">
             {/* Header */}
             <Header />
 
             {/* Routes */}
-            <div className="col-span-3">
+            <div className="container mx-auto p-4">
                 <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <>
-                                {/* <div className="grid-col-3"></div> */}
-                                <div className="container max-w-4xl mx-auto">
-                                    <Player />
-                                </div>
-                                {/* <div className="grid-col-3"></div> */}
-                            </>
-                        }
-                    />
-                    <Route path="/features" element={<Features />} />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/features" element={<FeaturesPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                 </Routes>

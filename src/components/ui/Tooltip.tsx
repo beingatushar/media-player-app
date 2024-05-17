@@ -18,7 +18,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
             onFocus={() => setIsVisible(true)}
         >
             {isVisible && (
-                <div className="absolute bottom-full mb-2 w-max p-2 text-gray-100 opacity-95 bg-gray-900 rounded shadow-lg text-center text-xs">
+                <div className="absolute bottom-full mb-2 w-max p-2 text-gray-100 opacity-95 bg-gray-800 rounded shadow-lg text-center text-xs">
                     {content}
                 </div>
             )}

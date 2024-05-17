@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Controls from "./Controls";
-import { usePlayerStore } from "../store/playerStore";
+import { usePlayerStore } from "../../store/playerStore";
 import { Video } from "./Video";
 import { CiMaximize1, CiPause1, CiPlay1 } from "react-icons/ci";
 import { IoCloseSharp } from "react-icons/io5";
-import Tooltip from "./Tooltip";
+import Tooltip from "../ui/Tooltip";
 
 const Player: React.FC = () => {
     const { isPlaying, isMinimized, expandPlayer, togglePlayPause } =
@@ -46,7 +46,7 @@ const Player: React.FC = () => {
         <div
             className={`aspect-w-16 aspect-h-9   ${
                 isMinimized
-                    ? "absolute w-[300px] right-4 bottom-4 group"
+                    ? "fixed w-[300px] right-4 bottom-4 group"
                     : "relative w-full"
             }`}
             onMouseEnter={handleMouseEnter}

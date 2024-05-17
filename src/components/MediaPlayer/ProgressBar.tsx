@@ -1,5 +1,5 @@
-import { usePlayerStore } from "../store/playerStore";
-import { formatTime } from "../utils/features";
+import { usePlayerStore } from "../../store/playerStore";
+import { formatTime } from "../../utils/features";
 
 const ProgressBar: React.FC = () => {
     const { setCurrentTime } = usePlayerStore();

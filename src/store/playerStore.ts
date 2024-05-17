@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { MutableRefObject } from 'react';
+import { audioUrls, videoUrls } from '../utils/features';
 
 interface PlayerState {
     isPlaying: boolean;
@@ -8,7 +9,6 @@ interface PlayerState {
     playbackSpeed: number;
     currentTime: number;
     duration: number;
-    mediaUrls: string[];
     mediaUrl: string;
     videoRef: MutableRefObject<HTMLVideoElement | null> | null;
     setVideoRef: (videoRef: MutableRefObject<HTMLVideoElement | null>) => void;
@@ -24,33 +24,18 @@ interface PlayerState {
     setPlaybackSpeed: (speed: number) => void;
     nextMedia: () => void;
     previousMedia: () => void;
-
-    isFullScreen: boolean,
+    setMediaUrl: (url: string) => void;
+    isFullScreen: boolean;
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
     isPlaying: false,
     isMinimized: false,
     volume: 0.5,
+    playbackSpeed: 1.0,
     currentTime: 0,
     duration: 0,
-    mediaUrls: [
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
-    ],
-    // mediaUrl: "https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3",
-    mediaUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    mediaUrl: videoUrls[0],
     videoRef: null,
     setVideoRef: (videoRef) => {
         if (videoRef && videoRef.current) {
@@ -138,7 +123,6 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
         const newTime = Math.max(currentTime - 10, 0);
         setCurrentTime(newTime);
     },
-    playbackSpeed: 1.0,
     setPlaybackSpeed: (speed) => {
         const { videoRef } = get();
         if (videoRef && videoRef.current) {
@@ -147,15 +131,18 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
         set({ playbackSpeed: speed });
     },
     nextMedia: () => {
-        const { mediaUrls, setVideoRef } = get();
-        const nextIndex = (mediaUrls.indexOf(get().mediaUrl) + 1) % mediaUrls.length;
+        const mediaUrls = [...videoUrls, ...audioUrls]; // Combine videoUrls and audioUrls
+        const currentIndex = mediaUrls.indexOf(get().mediaUrl);
+        const nextIndex = (currentIndex + 1) % mediaUrls.length;
         set({ mediaUrl: mediaUrls[nextIndex] });
     },
-
     previousMedia: () => {
-        const { mediaUrls, setVideoRef } = get();
+        const mediaUrls = [...videoUrls, ...audioUrls]; // Combine videoUrls and audioUrls
         const currentIndex = mediaUrls.indexOf(get().mediaUrl);
         const previousIndex = (currentIndex - 1 + mediaUrls.length) % mediaUrls.length;
         set({ mediaUrl: mediaUrls[previousIndex] });
     },
+    setMediaUrl: (url: string) => {
+        set({ mediaUrl: url });
+    }
 }));

@@ -3,12 +3,12 @@ import ProgressBar from "./ProgressBar";
 import VolumeControl from "./VolumeControl";
 import PlaySpeedControl from "./PlaySpeedControl";
 import KeyboardControls from "./KeyboardControls";
-import { usePlayerStore } from "../store/playerStore";
+import { usePlayerStore } from "../../store/playerStore";
 import { CiMinimize1, CiPause1, CiPlay1 } from "react-icons/ci";
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
 import { FaBackwardStep, FaForwardStep } from "react-icons/fa6";
 import { FaFastBackward, FaFastForward } from "react-icons/fa";
-import Tooltip from "./Tooltip";
+import Tooltip from "../ui/Tooltip";
 
 const Controls = () => {
     const {
@@ -27,7 +27,7 @@ const Controls = () => {
             className={`absolute  rounded-b-lg bottom-0 left-0 w-full bg-black bg-opacity-80 text-white p-3 transition-opacity duration-300`}
         >
             <ProgressBar />
-            <div className="flex items-center justify-between gap-3 text-3xl">
+            <div className="flex items-center justify-between gap-3 md:text-3xl">
                 <div className="flex items-center gap-3">
                     <Tooltip content="Previous">
                         <button

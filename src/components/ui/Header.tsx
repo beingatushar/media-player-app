@@ -9,8 +9,8 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-gradient-to-r from-purple-900 to-indigo-900 shadow-md col-span-3 h-max sticky">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <header className="bg-gradient-to-r from-purple-800 to-indigo-900 shadow-md col-span-3 h-max sticky">
+            <div className="container mx-auto px-8 py-1 flex justify-between items-center">
                 {/* Logo */}
                 <div className="text-3xl font-bold text-white">
                     <Link to="/">
@@ -22,25 +22,25 @@ const Header: React.FC = () => {
                 <nav className="hidden md:flex space-x-6">
                     <Link
                         to="/"
-                        className="text-gray-300 hover:text-white transition duration-300"
+                        className="text-gray-300 hover:text-white transition duration-300 text-center"
                     >
                         Home
                     </Link>
                     <Link
                         to="/features"
-                        className="text-gray-300 hover:text-white transition duration-300"
+                        className="text-gray-300 hover:text-white transition duration-300 text-center"
                     >
                         Features
                     </Link>
                     <Link
                         to="/about"
-                        className="text-gray-300 hover:text-white transition duration-300"
+                        className="text-gray-300 hover:text-white transition duration-300 text-center"
                     >
                         About
                     </Link>
                     <Link
                         to="/contact"
-                        className="text-gray-300 hover:text-white transition duration-300"
+                        className="text-gray-300 hover:text-white transition duration-300 text-center"
                     >
                         Contact
                     </Link>
@@ -76,25 +76,25 @@ const Header: React.FC = () => {
                     <nav className="px-2 pt-2 pb-4 space-y-2 sm:px-3">
                         <Link
                             to="/"
-                            className="block text-gray-300 hover:text-white transition duration-300"
+                            className="block text-gray-300 hover:text-white transition duration-300 text-center"
                         >
                             Home
                         </Link>
                         <Link
                             to="/features"
-                            className="block text-gray-300 hover:text-white transition duration-300"
+                            className="block text-gray-300 hover:text-white transition duration-300 text-center"
                         >
                             Features
                         </Link>
                         <Link
                             to="/about"
-                            className="block text-gray-300 hover:text-white transition duration-300"
+                            className="block text-gray-300 hover:text-white transition duration-300 text-center"
                         >
                             About
                         </Link>
                         <Link
                             to="/contact"
-                            className="block text-gray-300 hover:text-white transition duration-300"
+                            className="block text-gray-300 hover:text-white transition duration-300 text-center"
                         >
                             Contact
                         </Link>

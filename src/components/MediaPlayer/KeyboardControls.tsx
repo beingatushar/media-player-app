@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { usePlayerStore } from "../store/playerStore";
+import { usePlayerStore } from "../../store/playerStore";
 
 const KeyboardControls: React.FC = () => {
     const {

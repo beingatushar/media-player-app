@@ -15,7 +15,7 @@ interface FeatureProps {
 
 const FeatureCard: React.FC<FeatureProps> = ({ icon, title, description }) => {
     return (
-        <div className="p-6 bg-gray-800 rounded-lg shadow-lg grid-cols-1">
+        <div className="p-6 bg-gray-900 rounded-lg shadow-lg grid-cols-1">
             {icon}
             <h2 className="text-xl font-semibold mb-4 text-center">{title}</h2>
             <p className="text-center">{description}</p>
@@ -23,7 +23,7 @@ const FeatureCard: React.FC<FeatureProps> = ({ icon, title, description }) => {
     );
 };
 
-const Features: React.FC = () => {
+const FeaturesPage: React.FC = () => {
     const commonClasses = "text-4xl mb-4 mx-auto";
     const features: FeatureProps[] = [
         {
@@ -122,7 +122,7 @@ const Features: React.FC = () => {
     ];
 
     return (
-        <div className="bg-gray-900 text-white w-full">
+        <div className="bg-gray-800 text-white w-full">
             <div className="container mx-auto py-8 px-4">
                 <h1 className="text-3xl font-bold mb-8 text-center">
                     Features
@@ -137,4 +137,4 @@ const Features: React.FC = () => {
     );
 };
 
-export default Features;
+export default FeaturesPage;
