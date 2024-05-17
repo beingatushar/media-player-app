@@ -1,6 +1,21 @@
 import React from "react";
 import profilePic from "../assets/profile-pic.jpg";
 
+const AboutPage: React.FC = () => {
+    return (
+        <div className=" text-white py-8 px-4 col-span-3">
+            <div className="container mx-auto max-w-4xl">
+                <SummarySection />
+                <EducationSection />
+                <ExperienceSection />
+                <ProjectsSection />
+                <AchievementsSection />
+                <TechnicalSkillsSection />
+            </div>
+        </div>
+    );
+};
+
 const SummarySection: React.FC = () => {
     return (
         <div className="flex flex-col items-center mb-8">
@@ -107,7 +122,15 @@ const ProjectsSection: React.FC = () => {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
                 <li>
                     <strong>Genius.AI</strong> | Next.js, Tailwind, Prisma,
-                    Stripe, TypeScript | GitHub | Link Nov 2023
+                    Stripe, TypeScript |{" "}
+                    <a href="https://github.com/beingatushar/genius">
+                        <b>GitHub</b>
+                    </a>{" "}
+                    |{" "}
+                    <a href="https://genius-ai-beingatushar.vercel.app/">
+                        <b>Link</b>
+                    </a>{" "}
+                    Nov 2023
                     <ul className="list-disc list-inside">
                         <li>
                             Developed a responsive web application using Next.js
@@ -126,7 +149,15 @@ const ProjectsSection: React.FC = () => {
                 </li>
                 <li>
                     <strong>Social Media App</strong> | React.js, Node.js,
-                    Express.js, MongoDB | GitHub | Link Sept 2023
+                    Express.js, MongoDB |{" "}
+                    <a href="https://github.com/beingatushar/social-media">
+                        <b>GitHub</b>
+                    </a>{" "}
+                    |{" "}
+                    <a href="https://social-media-beingatushar.vercel.app/">
+                        <b>Link</b>
+                    </a>{" "}
+                    Sept 2023
                     <ul className="list-disc list-inside">
                         <li>
                             Utilized React.js for the front-end, Axios for
@@ -193,21 +224,6 @@ const TechnicalSkillsSection: React.FC = () => {
                     Operating System, Networks, DBMS, OOPS
                 </li>
             </ul>
-        </div>
-    );
-};
-
-const AboutPage: React.FC = () => {
-    return (
-        <div className=" text-white py-8 px-4 col-span-3">
-            <div className="container mx-auto max-w-4xl">
-                <SummarySection />
-                <EducationSection />
-                <ExperienceSection />
-                <ProjectsSection />
-                <AchievementsSection />
-                <TechnicalSkillsSection />
-            </div>
         </div>
     );
 };

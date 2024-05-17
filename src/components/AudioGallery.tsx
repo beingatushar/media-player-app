@@ -1,12 +1,12 @@
 import React from "react";
-import { audioUrls } from "../utils/features";
 import { usePlayerStore } from "../store/playerStore";
+import { audioUrls } from "../utils/features";
 
 const AudioGallery: React.FC = () => {
     const { setMediaUrl, mediaUrl } = usePlayerStore();
 
     return (
-        <div className="p-4 bg-gray-800 rounded-lg">
+        <div className="p-4 rounded-lg">
             <h2 className="text-white text-xl mb-4 text-center">
                 Select Audio Files
             </h2>
@@ -14,8 +14,8 @@ const AudioGallery: React.FC = () => {
                 {audioUrls.map((audioUrl, i) => (
                     <li
                         key={i}
-                        className={`p-4 bg-gray-700 rounded-lg text-white cursor-pointer hover:bg-gray-600 flex items-center justify-center 
-                         ${mediaUrl === audioUrl && "bg-gray-600"} `}
+                        className={`p-4 bg-gray-700 rounded-lg text-white cursor-pointer hover:bg-gray-600 flex items-center justify-center
+                         ${mediaUrl === audioUrl ? "bg-gray-500" : ""}`}
                         onClick={() => setMediaUrl(audioUrl)}
                     >
                         {`Audio ${i + 1}`}

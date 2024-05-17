@@ -1,12 +1,12 @@
 import React from "react";
-import { videoUrls } from "../utils/features";
 import { usePlayerStore } from "../store/playerStore";
+import { videoUrls } from "../utils/features";
 
 const VideoGallery: React.FC = () => {
     const { setMediaUrl, mediaUrl } = usePlayerStore();
 
     return (
-        <div className="p-4 bg-gray-800 rounded-lg">
+        <div className="p-4 rounded-lg">
             <h2 className="text-white text-xl mb-4 text-center">
                 Select Video Files
             </h2>
@@ -14,8 +14,8 @@ const VideoGallery: React.FC = () => {
                 {videoUrls.map((videoUrl, i) => (
                     <li
                         key={i}
-                        className={`p-4 bg-gray-700 rounded-lg text-white cursor-pointer hover:bg-gray-600 flex items-center justify-center 
-                     ${mediaUrl === videoUrl && "bg-gray-600"} `}
+                        className={`p-4 bg-gray-700 rounded-lg text-white cursor-pointer hover:bg-gray-600 flex items-center justify-center
+                         ${mediaUrl === videoUrl ? "bg-gray-500" : ""}`}
                         onClick={() => setMediaUrl(videoUrl)}
                     >
                         {`Video ${i + 1}`}

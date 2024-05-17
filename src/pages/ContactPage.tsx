@@ -1,14 +1,14 @@
 import React from "react";
 import {
-    AiOutlineMail,
-    AiFillPhone,
-    AiFillLinkedin,
     AiFillInstagram,
+    AiFillLinkedin,
+    AiFillPhone,
+    AiOutlineMail,
 } from "react-icons/ai";
 
 const ContactPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 px-4 col-span-3">
+        <div className="min-h-screen  text-white py-12 px-4 col-span-3">
             <div className="container mx-auto max-w-4xl">
                 <h1 className="text-4xl font-bold mb-8 text-center text-white">
                     Let's Connect
@@ -19,18 +19,16 @@ const ContactPage: React.FC = () => {
                             <div className="mb-6 flex items-center">
                                 <AiOutlineMail className="mr-2 " />
                                 <strong className="text-lg">Email:</strong>
-                                {"\t"}
                                 <a
                                     href="mailto:aggarwaltushar36@gmail.com"
                                     className="ml-2  underline"
                                 >
-                                    {"  "}
                                     aggarwaltushar36@gmail.com
                                 </a>
                             </div>
                             <div className="mb-6 flex items-center ">
                                 <AiFillPhone className="mr-2 " />
-                                <strong className="">Phone:</strong>{" "}
+                                <strong className="">Phone:</strong>
                                 <span className="ml-2">+91 85868 10252</span>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
-import { create } from 'zustand';
 import { MutableRefObject } from 'react';
+import { create } from 'zustand';
 import { audioUrls, videoUrls } from '../utils/features';
 
 interface PlayerState {
@@ -47,8 +47,6 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
                 volume: video.volume,
                 isPlaying: !video.paused,
             });
-
-            // Add event listeners to keep store state in sync with the video element
             video.addEventListener('timeupdate', () => {
                 set({ currentTime: video.currentTime });
             });
@@ -131,13 +129,13 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
         set({ playbackSpeed: speed });
     },
     nextMedia: () => {
-        const mediaUrls = [...videoUrls, ...audioUrls]; // Combine videoUrls and audioUrls
+        const mediaUrls = [...videoUrls, ...audioUrls];
         const currentIndex = mediaUrls.indexOf(get().mediaUrl);
         const nextIndex = (currentIndex + 1) % mediaUrls.length;
         set({ mediaUrl: mediaUrls[nextIndex] });
     },
     previousMedia: () => {
-        const mediaUrls = [...videoUrls, ...audioUrls]; // Combine videoUrls and audioUrls
+        const mediaUrls = [...videoUrls, ...audioUrls];
         const currentIndex = mediaUrls.indexOf(get().mediaUrl);
         const previousIndex = (currentIndex - 1 + mediaUrls.length) % mediaUrls.length;
         set({ mediaUrl: mediaUrls[previousIndex] });

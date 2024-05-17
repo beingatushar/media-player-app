@@ -1,11 +1,11 @@
 import React from "react";
-import { BiPlay, BiPause, BiSkipPrevious, BiSkipNext } from "react-icons/bi";
-import { IoVolumeHigh, IoVolumeLow } from "react-icons/io5";
+import { AiFillStar, AiOutlineClockCircle } from "react-icons/ai";
+import { BiPause, BiPlay, BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { BsFullscreen, BsVolumeMute } from "react-icons/bs";
-import { RiArrowGoBackFill, RiArrowGoForwardFill } from "react-icons/ri";
-import { FaExpandAlt, FaCompressAlt } from "react-icons/fa";
-import { AiOutlineClockCircle, AiFillStar } from "react-icons/ai";
+import { FaCompressAlt, FaExpandAlt } from "react-icons/fa";
+import { IoVolumeHigh, IoVolumeLow } from "react-icons/io5";
 import { MdKeyboard } from "react-icons/md";
+import { RiArrowGoBackFill, RiArrowGoForwardFill } from "react-icons/ri";
 
 interface FeatureProps {
     icon: JSX.Element;
@@ -122,7 +122,7 @@ const FeaturesPage: React.FC = () => {
     ];
 
     return (
-        <div className="bg-gray-800 text-white w-full">
+        <div className=" text-white w-full">
             <div className="container mx-auto py-8 px-4">
                 <h1 className="text-3xl font-bold mb-8 text-center">
                     Features
